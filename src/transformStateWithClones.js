@@ -33,7 +33,7 @@ function transformStateWithClones(state, actions) {
 
         break;
       default:
-        return 'error';
+        break;
     }
 
     result.push({ ...currentState });

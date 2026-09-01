@@ -11,6 +11,8 @@ function transformStateWithClones(state, actions) {
   let currentState = { ...state };
 
   for (const action of actions) {
+    currentState = { ...currentState };
+
     switch (action.type) {
       case 'addProperties':
         for (const key in action.extraData) {
@@ -34,8 +36,6 @@ function transformStateWithClones(state, actions) {
 
     result.push({ ...currentState });
   }
-
-  currentState = { ...currentState };
 
   return result;
 }
